@@ -1,0 +1,27 @@
+#!/bin/bash
+get_exchange_rate () {
+wget http://api.napiarfolyam.hu/?valuta="$1" -O exchange.xml -q
+cat exchange.xml 
+rm exchange.xml 
+}
+
+
+while getopts ":eucg" opt
+do
+case ${opt} in 
+e )
+get_exchange_rate eur
+;;
+u )
+get_exchange_rate usd
+;;
+c) get_exchange_rate chf
+;;
+g )
+get_exchange_rate gbp
+;;
+\? )
+echo "Usage: exchange [-e] [-u] [-c] [-g]"
+;;
+esac
+done
