@@ -15,7 +15,8 @@ get_exchange_rate eur
 u )
 get_exchange_rate usd
 ;;
-c) get_exchange_rate chf
+c) 
+get_exchange_rate chf
 ;;
 g )
 get_exchange_rate gbp
